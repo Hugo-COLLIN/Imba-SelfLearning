@@ -1,4 +1,4 @@
-import { toMs } from "./helpers"
+import { toMs } from "./helpers.imba"
 import * as df from "date-fns"
 
 export const durationInMillisecondsAsWordHourAndMin = (
