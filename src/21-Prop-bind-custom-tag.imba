@@ -1,4 +1,4 @@
-tag habit-group
+tag habit-group-21
 	prop habits = []
 
 	css .group tween:all 200ms ease 
@@ -10,11 +10,11 @@ tag habit-group
 		# <div> JSON.stringify habits
 		<div.group>
 			for habit in habits
-				<habit-item 
+				<habit-item-21 
 					bind:name=habit.name # add bind: before the prop to sync it between parent and child component
 					bind:done=habit.done>
 
-tag habit-item
+tag habit-item-21
 	prop name = "Untitled"
 	prop done = false
 	prop editing? = false
@@ -41,7 +41,7 @@ tag habit-item
 		<button.edit @click=(do editing? = !editing?)> if editing? then "Apply" else "Edit"
 
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-21 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
