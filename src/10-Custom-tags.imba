@@ -1,4 +1,4 @@
-tag habit-item
+tag habit-item-10
 
 	prop name = "Untitled"
 
@@ -10,14 +10,14 @@ tag habit-item
 
 
 # imba.mount <div>
-# 	<habit-item name="Exercise">
-# 	<habit-item name="Clean up">
-# 	<habit-item name="Learn Imba">
+# 	<habit-item-10 name="Exercise">
+# 	<habit-item-10 name="Clean up">
+# 	<habit-item-10 name="Learn Imba">
 
-tag habit-group
+tag habit-group-10
 	<self>
-		<habit-item name="Exercise">
-		<habit-item name="Clean up">
-		<habit-item name="Learn Imba">
+		<habit-item-10 name="Exercise">
+		<habit-item-10 name="Clean up">
+		<habit-item-10 name="Learn Imba">
 
-imba.mount <habit-group>
+imba.mount <habit-group-10>
