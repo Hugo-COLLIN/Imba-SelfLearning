@@ -11,4 +11,28 @@ tag app
 
 imba.mount <app>
 
-alert "Hello world!"
+const name = "Hugo"
+let habitComplete? = no
+console.log if habitComplete? then "Hello {name}!" else "Bye!"
+
+# let myHabits = 
+# 	[ 'exercise'
+# 	, 'study'
+# 	, 'clean up'
+# 	]
+let myHabits = [ 
+	'exercise'
+	'study'
+	'clean up'
+	'yay'
+]
+console.log myHabits
+
+let habitDetails = 
+	name: "exercise"
+	done: false
+	completions: 12
+
+console.log habitDetails
+
+console.log habitDetails.name.toUpperCase!
