@@ -7,5 +7,9 @@
   },
   "devDependencies": {
     "imba": "^2.0.0-alpha.247"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "nanoid": "^5.1.6"
   }
 }
