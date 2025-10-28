@@ -10,7 +10,7 @@ global css
 		c:gray8 
 		fs:sm
 
-tag habit-item
+tag habit-item-17
 	prop name = "Untitled"
 	prop done = false
 
@@ -33,7 +33,7 @@ tag habit-item
 			<input type="checkbox" checked=done>
 			<div> name
 
-tag habit-group
+tag habit-group-17
 	prop habits = []
 
 	css bgc: #fff 
@@ -47,9 +47,9 @@ tag habit-group
 
 	<self>
 		for habit in habits
-			<habit-item name=habit.name done=habit.done>
+			<habit-item-17 name=habit.name done=habit.done>
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-17 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
