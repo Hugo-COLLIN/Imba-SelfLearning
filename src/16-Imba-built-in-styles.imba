@@ -13,7 +13,7 @@ global css body bgc:cool1 c:gray8 fs:sm
 # + Number from 1 to 8 (Tailwind-CSS inspired)
 
 
-tag habit-item
+tag habit-item-16
 	prop name = "Untitled"
 	prop done = false
 
@@ -28,7 +28,7 @@ tag habit-item
 			<input type="checkbox" checked=done>
 			<div> name
 
-tag habit-group
+tag habit-group-16
 	prop habits = []
 
 	css bgc: #fff p: 10px rd:lg 
@@ -38,9 +38,9 @@ tag habit-group
 
 	<self>
 		for habit in habits
-			<habit-item name=habit.name done=habit.done>
+			<habit-item-16 name=habit.name done=habit.done>
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-16 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
