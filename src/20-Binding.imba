@@ -1,4 +1,4 @@
-tag habit-group
+tag habit-group-20
 	prop habits = []
 
 	css .group tween:all 200ms ease 
@@ -9,9 +9,9 @@ tag habit-group
 	<self>
 		<div.group>
 			for habit in habits
-				<habit-item name=habit.name done=habit.done>
+				<habit-item-20 name=habit.name done=habit.done>
 
-tag habit-item
+tag habit-item-20
 	prop name = "Untitled"
 	prop done = false
 	prop editing? = false
@@ -49,7 +49,7 @@ tag habit-item
 	# 	<button.edit @click=(do editing? = !editing?)> if editing? then "Apply" else "Edit"
 
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-20 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
