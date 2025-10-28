@@ -2,7 +2,7 @@
 global css body bgc:#eee
 
 
-tag habit-item
+tag habit-item-15
 	prop name = "Untitled"
 	prop done = false
 
@@ -18,7 +18,7 @@ tag habit-item
 				name
 				<span> "yay!"
 
-tag habit-group
+tag habit-group-15
 	prop habits = []
 
 	css self # self is optional (default selector)
@@ -32,9 +32,9 @@ tag habit-group
 	<self>
 		<label> "Hello"
 		for habit in habits
-			<habit-item name=habit.name done=habit.done>
+			<habit-item-15 name=habit.name done=habit.done>
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-15 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
