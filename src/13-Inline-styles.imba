@@ -1,12 +1,12 @@
-tag habit-item
+tag habit-item-13
 	prop name = "Untitled"
-	prop done = false # done? not working!
+	prop done = false
 	<self>
 		<label[display:flex align-items:center gap:5px]>
 			<input type="checkbox" checked=done>
 			<div> name
 
-tag habit-group
+tag habit-group-13
 	prop habits = []
 	<self [
 		background-color: #eee
@@ -15,9 +15,9 @@ tag habit-group
 		border: 1px solid #ccc
 	]>
 		for habit in habits
-			<habit-item name=habit.name done=habit.done>
+			<habit-item-13 name=habit.name done=habit.done>
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-13 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
