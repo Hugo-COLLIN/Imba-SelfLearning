@@ -2,22 +2,16 @@ tag habit-item
 
 	prop name = "Untitled"
 
-	def render # optional
-		<self>
-			<label>
-				<input type="checkbox">
-				<div> name
-
-
-# imba.mount <div>
-# 	<habit-item name="Exercise">
-# 	<habit-item name="Clean up">
-# 	<habit-item name="Learn Imba">
+	<self>
+		<label>
+			<input type="checkbox">
+			<div> name
 
 tag habit-group
-	<self>
-		<habit-item name="Exercise">
-		<habit-item name="Clean up">
-		<habit-item name="Learn Imba">
+	prop habits = []
 
-imba.mount <habit-group>
+	<self>
+		for habit in habits
+			<habit-item name=habit>
+
+imba.mount <habit-group habits=["Exercise", "Clean up", "Learn Imba"]>
