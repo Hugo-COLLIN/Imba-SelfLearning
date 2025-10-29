@@ -35,7 +35,7 @@ tag habit-item
 			<div.item .done=done>
 				<input type="text" bind=name>
 		else
-			<button .item .done=done @click=(done = !done)>
+			<button .item .done=done @click=(done = !done) @click.alt=emit("deleteItem")>
 				# <div> name
 				<svg src=icons[name]..svg>
 

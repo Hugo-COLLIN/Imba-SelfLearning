@@ -37,7 +37,7 @@ tag dopamine-box
 	css .container inset:0px d:vflex jc:center ai:stretch
 		.panel-area d:vflex ja:center flg:1 mt:0 mb:$panel-space pt:$panel-space
 			.controls mt:20px d:flex  g:10px
-				button px:5px rd:sm
+				button px:5px rd:sm bgc:trasparent td@hover:underline fs:xs color:cooler5
 		.chooser-area tween:$default-tween h:0 pos:relative of:hidden
 			&.on h:100%
 			.chooser inset:0 mx:$panel-space ofy:scroll bgc:cooler2 rdt:10px
