@@ -10,7 +10,7 @@ tag habit-group
 		habits.splice index, 1
 
 	<self>
-		<div> JSON.stringify habits
+		# <div> JSON.stringify habits
 		<div.group>
 			for habit, i in habits
 				<habit-item
