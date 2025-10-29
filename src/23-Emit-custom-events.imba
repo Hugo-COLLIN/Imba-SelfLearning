@@ -1,4 +1,4 @@
-tag habit-group
+tag habit-group-23
 	prop habits = []
 
 	css .group tween:all 200ms ease 
@@ -28,7 +28,7 @@ tag habit-group
 		<button @click=foo [mb:10px]> "Press me" 
 		<div.group>
 			for habit, i in habits
-				<habit-item 
+				<habit-item-23 
 					bind:name=habit.name # add bind: before the prop to sync it between parent and child component
 					bind:done=habit.done
 					@deleteItem=deleteItem(i)
@@ -38,7 +38,7 @@ tag habit-group
 			<button @click=resetAll> "Reset all"
 		
 
-tag habit-item
+tag habit-item-23
 	prop name = "Untitled"
 	prop done = false
 	prop editing? = false
@@ -67,7 +67,7 @@ tag habit-item
 			<button @click=emit("deleteItem")> "Delete"
 
 
-imba.mount <habit-group habits=[
+imba.mount <habit-group-23 habits=[
 	{name: "Clean up", done: false}
 	{name: "Exercise", done: false}
 	{name: "Study", done: true}
