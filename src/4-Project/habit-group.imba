@@ -6,16 +6,13 @@ tag habit-group
 		d: flex g:10px @xs:30px jc:center 
 		shadow: 0 5px 15px black/20
 
-	def deleteItem index
-		habits.splice index, 1
-
 	<self>
 		# <div> JSON.stringify habits
 		<div.group>
 			for habit, i in habits
 				<habit-item
 					key=habit.id
+					id=habit.id
 					bind:name=habit.name
 					bind:done=habit.done
-					@deleteItem=deleteItem(i)
 				>
