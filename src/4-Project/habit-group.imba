@@ -10,9 +10,11 @@ tag habit-group
 		habits.splice index, 1
 
 	<self>
+		<div> JSON.stringify habits
 		<div.group>
 			for habit, i in habits
 				<habit-item
+					key=habit.id
 					bind:name=habit.name
 					bind:done=habit.done
 					@deleteItem=deleteItem(i)

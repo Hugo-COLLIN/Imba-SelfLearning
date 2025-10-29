@@ -21,11 +21,10 @@ tag habit-item
 			<div.item .done=done>
 				<input type="text" bind=name>
 		else
-			<button .item .done=done bind=done>
+			<button .item .done=done @click=(done = !done)>
 				<div> name
-				<svg src=icons[name]..svg> # .. is to avoid error: don't try to access something on undefined
-				# <svg src=import("./icon-graphics/{name}.svg")> # dynamic import not working
-		
+				<svg src=icons[name]..svg>
+
 		<div.actions>
 			<button.edit bind=editing?> if editing? then "Apply" else "Edit"
 			<button @click=emit("deleteItem")> "Delete"
