@@ -1,3 +1,5 @@
+import {icons} from "./icons"
+
 tag habit-item
 	prop name = "Untitled"
 	prop done = false
@@ -21,6 +23,8 @@ tag habit-item
 		else
 			<button .item .done=done bind=done>
 				<div> name
+				<svg src=icons[name]..svg> # .. is to avoid error: don't try to access something on undefined
+				# <svg src=import("./icon-graphics/{name}.svg")> # dynamic import not working
 		
 		<div.actions>
 			<button.edit bind=editing?> if editing? then "Apply" else "Edit"

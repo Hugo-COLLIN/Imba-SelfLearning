@@ -1,3 +1,5 @@
+import {icons} from "./icons"
+
 tag habit-adder
 	prop name = ""
 
@@ -14,6 +16,10 @@ tag habit-adder
 
 
 	<self>
+		# <div> JSON.stringify icons['objects_cleaning']
+		<svg src=icons['objects_cleaning'].svg>
+		<svg src=icons['people_agriculture'].svg>
+		# <svg src=import("./icon-graphics/cleaning.svg")>
 		<header> "Add habit"
 		<section>
 		<form @submit.prevent=handleSubmit>
