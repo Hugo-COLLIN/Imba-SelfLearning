@@ -16,7 +16,7 @@ global css
 	body bgc:#F9FAFC
 		
 
-tag dopamine-box
+tag dopamine-box-36
 	prop showAdder = yes
 	prop habits = loadData!
 
@@ -77,4 +77,4 @@ tag dopamine-box
 				<div.chooser>
 					<habit-adder @habitAdded=handleHabitAdded>
 
-imba.mount <dopamine-box>
+imba.mount <dopamine-box-36>
