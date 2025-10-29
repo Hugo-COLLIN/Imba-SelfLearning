@@ -5,14 +5,19 @@ tag habit-group
 		bgc: #fff p: 10px rd:lg 
 		d: flex g:10px @xs:30px jc:center 
 		shadow: 0 5px 15px black/20
+		&.empty rd:md shadow:0 0 0 2px cooler2
 
-	<self>
-		# <div> JSON.stringify habits
-		<div.group>
-			for habit, i in habits
-				<habit-item
-					key=habit.id
-					id=habit.id
-					name=habit.name
-					done=habit.done
-				>
+	def render
+		const empty? = habits.length === 0
+		<self>
+			# <div> JSON.stringify habits
+			<div.group .empty=empty?>
+				if empty?
+					<habit-item [visibility:hidden pe:none]>
+				for habit, i in habits
+					<habit-item
+						key=habit.id
+						id=habit.id
+						name=habit.name
+						done=habit.done
+					>
