@@ -22,6 +22,10 @@ tag dopamine-box
 		for habit in habits
 			habit.done = no
 
+	def handleHabitAdded e
+		const newHabit = {name:e.detail, done: false, if: nanoid!}
+		habits.push newHabit
+
 
 	<self>
 		<habit-group habits=habits>
@@ -29,6 +33,6 @@ tag dopamine-box
 			<button @click=completeAll> "Complete all"
 			<button @click=resetAll> "Reset all"
 
-		<habit-adder>
+		<habit-adder @habitAdded=handleHabitAdded>
 
 imba.mount <dopamine-box>
