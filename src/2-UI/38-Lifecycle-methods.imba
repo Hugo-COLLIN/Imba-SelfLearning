@@ -16,7 +16,7 @@ global css
 	body bgc:#F9FAFC
 		
 
-tag dopamine-box
+tag dopamine-box-38
 	prop showAdder = yes
 	prop habits = loadData!
 
@@ -61,6 +61,9 @@ tag dopamine-box
 			.chooser inset:0 mx:$panel-space ofy:scroll bgc:cooler2 rdt:10px
 
 	# -- Lifecycle methods : --
+	# setup -> render -> rendered -> mount
+	# Then, each event/change re-renders everything
+	# -> [change] -> render -> rendered -> [change] -> render -> rendered -> ...
 	def setup
 		console.log "setup"
 		showAdder = habits.length === 0 # if showAdder
@@ -90,4 +93,4 @@ tag dopamine-box
 					<div.chooser>
 						<habit-adder @habitAdded=handleHabitAdded>
 
-imba.mount <dopamine-box>
+imba.mount <dopamine-box-38>
