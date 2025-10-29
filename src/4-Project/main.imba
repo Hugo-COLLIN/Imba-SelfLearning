@@ -40,6 +40,11 @@ tag dopamine-box
 		habits = habits.filter do(h) h.id !== idToDelete
 		# habits.splice index, 1
 
+	def toggleItem e
+		const idToToggle = e.detail
+		for habit in habits
+			habit.done = !habit.done if habit.id === idToToggle
+
 	css .container inset:0px d:vflex jc:center ai:stretch
 		.panel-area d:vflex ja:center flg:1 mt:0 mb:$panel-space pt:$panel-space
 			.controls mt:20px d:flex  g:10px
@@ -51,7 +56,11 @@ tag dopamine-box
 	<self>
 		<div.container>
 			<div.panel-area>
-				<habit-group habits=habits @deleteItem=deleteItem>
+				<habit-group 
+					habits=habits 
+					@deleteItem=deleteItem
+					@toggleItem=toggleItem
+				>
 				<div.controls>
 					<button @click=toggleAdder> "Toggle"
 					<button @click=resetAll> "Reset all"

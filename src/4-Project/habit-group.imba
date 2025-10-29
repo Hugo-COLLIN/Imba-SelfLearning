@@ -13,6 +13,6 @@ tag habit-group
 				<habit-item
 					key=habit.id
 					id=habit.id
-					bind:name=habit.name
-					bind:done=habit.done
+					name=habit.name
+					done=habit.done
 				>
