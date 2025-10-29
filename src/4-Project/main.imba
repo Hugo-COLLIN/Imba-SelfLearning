@@ -18,10 +18,8 @@ global css
 tag dopamine-box
 	prop showAdder = no
 	prop habits = [
-			{name: "Clean up", done: false, id:nanoid!}
-			{name: "Exercise", done: false, id:nanoid!}
-			{name: "Study", done: true, id:nanoid!}
-			{name: "Learn Imba", done: false, id:nanoid!}
+			{name: "people_agriculture", done: false, id:nanoid!}
+			{name: "body_eye", done: false, id:nanoid!}
 		]
 	
 

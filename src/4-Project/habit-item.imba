@@ -36,7 +36,7 @@ tag habit-item
 				<input type="text" bind=name>
 		else
 			<button .item .done=done @click=(done = !done)>
-				<div> name
+				# <div> name
 				<svg src=icons[name]..svg>
 
 		<div.actions>
