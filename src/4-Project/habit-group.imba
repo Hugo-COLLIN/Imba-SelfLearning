@@ -6,17 +6,6 @@ tag habit-group
 		d: flex g:10px @xs:30px jc:center 
 		shadow: 0 5px 15px black/20
 
-	css div.controls mt:10px d:flex jc:space-between
-		button bgc:transparent td@hover:underline fs:xs color:blue5 cursor:pointer border:none
-
-	def completeAll
-		for habit in habits
-			habit.done = yes
-
-	def resetAll
-		for habit in habits
-			habit.done = no
-
 	def deleteItem index
 		habits.splice index, 1
 
@@ -28,6 +17,3 @@ tag habit-group
 					bind:done=habit.done
 					@deleteItem=deleteItem(i)
 				>
-		<div.controls>
-			<button @click=completeAll> "Complete all"
-			<button @click=resetAll> "Reset all"
