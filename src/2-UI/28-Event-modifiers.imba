@@ -1,4 +1,4 @@
-tag habit-adder-28
+tag habit-adder
 	prop name = "Untitled"
 
 	css bgc:cool2 p:10px rd:lg
