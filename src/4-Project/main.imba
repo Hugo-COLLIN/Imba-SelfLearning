@@ -1,8 +1,10 @@
 import {nanoid} from "nanoid"
+import {Howl} from "howler"
 import {persistData, loadData, clearData} from './persist'
 import "./habit-group"
 import "./habit-item"
 import "./habit-adder"
+import soundFile from "./magic-03.mp3"
 
 global css
 	@root
@@ -14,44 +16,54 @@ global css
 		$default-ease:ease
 		$default-tween:all $default-speed $default-ease
 	body bgc:#F9FAFC
-		
 
+		
 tag dopamine-box
 	prop showAdder = yes
 	prop habits = loadData!
-
+	prop celebrateSound = null
+	
 	def persist
-		persistData(habits)	
-
+		persistData(habits)
+		
 	def toggleAdder
 		showAdder = !showAdder
-
+		
 	def resetAll
 		for habit in habits
 			habit.done = no
 		persist!
-
+		
 	def handleHabitAdded e
 		const newHabit = {name:e.detail, done: false, id: nanoid!}
 		habits.push newHabit
 		persist!
-
+		
 	def deleteItem e
 		const idToDelete = e.detail
-		# console.log e.detail
 		habits = habits.filter do(h) h.id !== idToDelete
 		persist!
-
+		
 	def toggleItem e
+		# Initialiser l'audio au premier clic si nécessaire
+		if !celebrateSound
+			celebrateSound = new Howl {src: soundFile}
+		
 		const idToToggle = e.detail
+		let remaining = 0
 		for habit in habits
-			habit.done = !habit.done if habit.id === idToToggle
-		persist!
+			if habit.id === idToToggle
+				habit.done = !habit.done
+			remaining++ unless habit.done
 
+		celebrateSound.play! if remaining === 0			
+
+		persist!
+		
 	def handleClearData
 		clearData!
 		habits = []
-
+		
 	css .container inset:0px d:vflex jc:center ai:stretch
 		.panel-area d:vflex ja:center flg:1 mt:0 mb:$panel-space pt:$panel-space
 			.controls mt:20px d:flex  g:10px
@@ -59,18 +71,18 @@ tag dopamine-box
 		.chooser-area tween:$default-tween h:0 pos:relative of:hidden
 			&.on h:100%
 			.chooser inset:0 mx:$panel-space ofy:scroll bgc:cooler2 rdt:10px
-
+			
 	# -- Lifecycle methods : --
 	def setup
 		console.log "setup"
 		showAdder = habits.length === 0 # if showAdder
-
+		
 	def mount
 		console.log "mount"
-
+		
 	def rendered
 		console.log "rendered"
-
+		
 	def render
 		console.log "render"
 		<self>
